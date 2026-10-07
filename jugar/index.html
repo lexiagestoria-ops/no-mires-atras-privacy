@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>No Mires Atrás · Juega gratis</title>
+<meta name="description" content="Un juego de terror basado en leyendas españolas. Corre hasta el alba y, pase lo que pase, no mires atrás. Gratis en Android, demo en PC.">
+<meta property="og:title" content="No Mires Atrás">
+<meta property="og:description" content="16 noches. 16 leyendas. Corre hasta el alba y no mires atrás.">
+<meta property="og:image" content="portada.jpg">
+<meta name="theme-color" content="#0b0608">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=Cormorant+SC:wght@700&display=swap" rel="stylesheet">
+<style>
+:root { --bg: #070405; --ink: #f2e6d0; --muted: #c9b8a0; --ember: #ffb070; --gold: #ffd27a; --line: rgba(255,176,112,.35); }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--ink); font: 500 18px/1.45 "Barlow Condensed", "Arial Narrow", sans-serif; }
+.hero { display: flex; flex-direction: column; padding: 22px 16px 28px;
+  background: linear-gradient(180deg, rgba(7,4,5,.8) 0%, rgba(7,4,5,.1) 24%, rgba(7,4,5,0) 40%, rgba(7,4,5,.55) 56%, rgba(7,4,5,.94) 66%, var(--bg) 82%), url(portada.jpg) center top / 100% auto no-repeat var(--bg); }
+.kicker { text-align: center; font-weight: 600; font-size: 13px; letter-spacing: .2em; color: var(--muted); text-transform: uppercase; }
+h1 { text-align: center; margin-top: 8px; font: 700 clamp(48px, 13vw, 84px)/.92 "Cormorant SC", Georgia, serif; letter-spacing: .05em; text-shadow: 0 0 28px rgba(255,120,60,.5), 0 3px 8px #000; }
+.space { height: min(62vw, 340px); }
+.wrap { max-width: 560px; width: 100%; margin: 0 auto; }
+.tag { font: 700 24px/1.1 "Cormorant SC", Georgia, serif; text-align: center; margin-bottom: 20px; }
+.tag em { font-style: normal; color: var(--ember); }
+.btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 15px 16px; border-radius: 12px; margin-bottom: 12px;
+  font: 600 20px "Barlow Condensed", sans-serif; letter-spacing: .14em; text-transform: uppercase; text-decoration: none; color: #1a0a06; background: var(--ember); border: 2px solid var(--ember); }
+.btn.alt { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn.soon { background: rgba(10,6,8,.6); color: var(--muted); border: 2px dashed rgba(242,230,208,.25); pointer-events: none; }
+.btn .t { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.15; }
+.btn small { font-size: 13px; letter-spacing: .16em; color: var(--ember); }
+.btn svg { width: 22px; height: 22px; flex: none; }
+.code { border: 2px solid var(--ember); border-radius: 12px; padding: 14px 16px; margin: 22px 0 6px; background: rgba(60,20,8,.5); text-align: center; }
+.code .lbl { font-weight: 600; font-size: 13px; letter-spacing: .24em; color: var(--ember); text-transform: uppercase; }
+.code .word { font-weight: 600; font-size: 38px; letter-spacing: .34em; padding-left: .34em; color: #fff3df; line-height: 1.2; }
+.code p { color: var(--muted); font-size: 17px; }
+.code b { color: var(--gold); font-weight: 600; }
+section { padding: 28px 16px; }
+h2 { font: 700 30px/1.1 "Cormorant SC", Georgia, serif; text-align: center; margin-bottom: 8px; }
+h2 span { color: var(--ember); }
+.lead { text-align: center; color: var(--muted); margin-bottom: 16px; }
+.nights { width: 100%; border-radius: 10px; display: block; }
+ul { list-style: none; margin-top: 18px; }
+li { position: relative; padding-left: 22px; margin-bottom: 10px; }
+li::before { content: ''; position: absolute; left: 3px; top: 9px; width: 9px; height: 9px; background: var(--ember); transform: rotate(45deg); box-shadow: 0 0 8px rgba(255,140,60,.8); }
+li b { color: var(--gold); font-weight: 600; }
+footer { text-align: center; color: var(--muted); font-size: 15px; padding: 18px 16px 36px; }
+footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="kicker" data-en="A horror game based on Spanish legends">Un juego de terror basado en leyendas españolas</div>
+  <h1 data-en="Don't look<br>back">No mires<br>atrás</h1>
+  <div class="space"></div>
+  <div class="wrap">
+    <div class="tag" data-en="Tonight, something is following you.<br><em>Whatever happens, don't look back.</em>">Esta noche, algo te sigue.<br><em>Pase lo que pase, no mires atrás.</em></div>
+    <a class="btn" id="play" href="#">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 2.6v18.8c0 .5.5.8.9.6l16.3-9.4c.4-.2.4-.9 0-1.1L4.9 2c-.4-.2-.9.1-.9.6z"/></svg>
+      <span class="t"><span data-en="Free on Google Play">Gratis en Google Play</span></span>
+    </a>
+    <a class="btn alt" id="itch" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      <span class="t"><span data-en="PC demo on itch.io">Demo para PC en itch.io</span></span>
+    </a>
+    <div class="code">
+      <div class="lbl" data-en="Halloween code · limited time">Código de Halloween · por tiempo limitado</div>
+      <div class="word">SAMAIN</div>
+      <p data-en="Redeem it in <b>Settings › Redeem code</b>: exclusive look <b>«All Souls' Night»</b> for every character and <b>1,000 echoes</b>.">Canjéalo en <b>Ajustes › Canjear código</b>: aspecto exclusivo <b>«Noche de Difuntos»</b> para todos los personajes y <b>1.000 ecos</b>.</p>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2 data-en="16 nights. <span>16 legends.</span>">16 noches. <span>16 leyendas.</span></h2>
+    <p class="lead" data-en="The Santa Compaña, the Meiga, the Headless Horseman, the Sacamantecas, the Tarasca, the Endless Night… and one night nobody should ever find.">La Santa Compaña, la Meiga, el Jinete sin Cabeza, el Sacamantecas, la Tarasca, la Noche Eterna… y una noche que nadie debería encontrar.</p>
+    <img class="nights" src="noches.jpg" alt="" loading="lazy">
+    <ul>
+      <li data-en="Run <b>five minutes until dawn</b> with a monster right on your heels.">Corre <b>cinco minutos hasta el alba</b> con un monstruo pisándote los talones.</li>
+      <li data-en="Monsters <b>learn your powers</b> and evolve during the night.">Los monstruos <b>aprenden tus poderes</b> y evolucionan durante la noche.</li>
+      <li data-en="In the last 45 seconds comes <b>the fury</b>, with its own metal theme.">En los últimos 45 segundos llega <b>la furia</b>, con su propio tema de metal.</li>
+      <li data-en="<b>7 characters, 35 looks, 7 pets</b> and a secret story hidden along the road."><b>7 personajes, 35 aspectos, 7 mascotas</b> y una historia secreta escondida en el camino.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <a href="../" data-en="Privacy policy">Política de privacidad</a>
+</footer>
+
+<script>
+// ── Enlaces: cuando el juego esté publicado, pon true y (si cambia) la dirección ──
+const TIENDAS = {
+  play: { listo: false, url: 'https://play.google.com/store/apps/details?id=com.lexiagestoria.nomiresatras&referrer=utm_source%3Dpanfleto%26utm_campaign%3Dhalloween' },
+  itch: { listo: false, url: 'https://lexiagestoria.itch.io/no-mires-atras' },
+};
+const en = !/^es\b/i.test(navigator.language || 'es');
+if (en) {
+  document.documentElement.lang = 'en';
+  document.title = "Don't Look Back · Play free";
+  for (const el of document.querySelectorAll('[data-en]')) el.innerHTML = el.dataset.en;
+}
+for (const [id, t] of Object.entries(TIENDAS)) {
+  const a = document.getElementById(id);
+  if (t.listo) { a.href = t.url; a.rel = 'noopener'; continue; }
+  a.removeAttribute('href');
+  a.className = 'btn soon';
+  a.querySelector('.t').insertAdjacentHTML('beforeend', `<small>${en ? 'Coming soon' : 'Muy pronto'}</small>`);
+}
+</script>
+</body>
+</html>
